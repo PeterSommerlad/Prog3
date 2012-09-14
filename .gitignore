@@ -10,3 +10,10 @@
 *.lai
 *.la
 *.a
+
+.DS_Store
+.cproject
+Debug
+ws0/.metadata/
+
+.gitignore.swp
