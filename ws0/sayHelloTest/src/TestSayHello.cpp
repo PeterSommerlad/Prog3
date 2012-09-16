@@ -2,7 +2,7 @@
 #include "ide_listener.h"
 #include "cute_runner.h"
 #include <sstream>
-#include "sayHello2.h"
+#include "sayhello2.h"
 void testSayHelloSaysHelloWorld() {
 	std::ostringstream out;
 	sayHello(out);
