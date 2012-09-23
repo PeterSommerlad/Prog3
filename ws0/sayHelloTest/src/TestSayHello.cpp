@@ -6,7 +6,7 @@
 void testSayHelloSaysHelloWorld() {
 	std::ostringstream out;
 	sayHello(out);
-	ASSERT_EQUAL("Hello world!\n",out.str());
+	ASSERT_EQUAL("Hello, world!\n",out.str());
 }
 void runSuite(){
 	cute::suite s;
