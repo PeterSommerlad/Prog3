@@ -97,6 +97,8 @@
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="const_to_the_left_surprise.cdt.managedbuild.target.macosx.exe.606126760" name="Executable" projectType="cdt.managedbuild.target.macosx.exe"/>
 	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope"/>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.macosx.exe.release.155044337;cdt.managedbuild.config.macosx.exe.release.155044337.;cdt.managedbuild.tool.gnu.c.compiler.macosx.exe.release.1584825124;cdt.managedbuild.tool.gnu.c.compiler.input.2051434123">
@@ -109,9 +111,7 @@
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.macosx.exe.debug.1924091990;cdt.managedbuild.config.gnu.macosx.exe.debug.1924091990.;cdt.managedbuild.tool.gnu.cpp.compiler.macosx.exe.debug.1762640639;cdt.managedbuild.tool.gnu.cpp.compiler.input.432373545">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
 		</scannerConfigBuildInfo>
 	</storageModule>
-	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
-	<storageModule moduleId="refreshScope"/>
 </cproject>

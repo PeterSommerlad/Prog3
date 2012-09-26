@@ -2,5 +2,5 @@
 
 int main() {
     bool cond{};
-	std::cout << cond ? "Hello" : "Peter";
+	std::cout << (cond ? "Hello" : "Peter");
 }

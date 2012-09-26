@@ -28,9 +28,9 @@ int main(){
 
 // start at line 30
 double const pi{std::acos(0.5)*3};
-std::cout << std::setprecision(4) << pi << std::endl;
-std::cout << std::scientific << pi << std::endl;
-std::cout << std::fixed << pi*1e6 << std::endl;
+std::cout << std::setprecision(4) << pi << '\n';
+std::cout << std::scientific << pi << '\n';
+std::cout << std::fixed << pi*1e6 << '\n';
 
 }
 

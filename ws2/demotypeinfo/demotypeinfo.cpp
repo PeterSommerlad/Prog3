@@ -11,6 +11,7 @@ void showTypeInfoAndValue(T&& x){
 	::free(toBeFreed);
 	std::cout << x << " is of type "<<result<<'\n';
 }
+// no need to understand, variadic template with perfect forwarding.
 template <typename ...ALL>
 void showTypeInfo(ALL&&... ){}
 template <typename T, typename ...ALL>
