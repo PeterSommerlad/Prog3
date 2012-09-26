@@ -18,3 +18,9 @@ Debug
 .gitignore.swp
 
 ws0/evensmaller/a.out
+
+ws3/algorithmdemo/.settings/language.settings.xml
+
+ws3/algorithmdemo/.settings/org.eclipse.cdt.codan.core.prefs
+
+*.prefs
