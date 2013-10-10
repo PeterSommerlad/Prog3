@@ -137,8 +137,8 @@ try {
 
 
 
-bool Date::operator!=(Date const& rhs) const {
-	return !(*this == rhs);
-}
+//bool Date::operator!=(Date const& rhs) const {
+//	return !(*this == rhs);
+//}
 
 } // namespace date

@@ -100,7 +100,7 @@ auto dont_call_this_way=R5::operator"" _R5(42);
 using R5::operator"" _R5;// or using namespace R5;
 static_assert(Ring5{2}==7_R5,"UDL operator");
 
-static_assert(x==2_R5,"explicit UDL operator worked");
+static_assert(2==2_R5,"explicit UDL operator worked");
 
 void runSuite(){
     cute::suite s;

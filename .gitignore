@@ -19,8 +19,12 @@ Debug
 
 ws0/evensmaller/a.out
 
-ws3/algorithmdemo/.settings/language.settings.xml
 
 ws3/algorithmdemo/.settings/org.eclipse.cdt.codan.core.prefs
+ws4/chapter_function_syntax_clang/.settings/
+ws4/chapter_function_syntax_test/chapter_function_syntax_test.xml
+ws4/chapter_function_syntax_test/cute/
+ws4/chapter_function_syntax/.settings/language.settings.xml
+ws7/maplegacyloop/.settings/language.settings.xml
 
 *.prefs

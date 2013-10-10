@@ -42,8 +42,8 @@ private:
 void testWriting3Times() {
 	move_enabled m(std::string(100000u,'a'),1000UL);
 	std::vector<move_enabled> vm;
-	typedef std::chrono::high_resolution_clock Clock;
-    typedef std::chrono::milliseconds milliseconds;
+	using Clock=std::chrono::high_resolution_clock;
+    using std::chrono::milliseconds;
     Clock::time_point t0 = Clock::now();
 	for (int i=0; i < 10000; ++ i){
 //		vm.push_back(move_enabled(std::string(100000u,'a'),1000UL));
@@ -62,8 +62,8 @@ void testWriting3Times() {
 void thisIsATest1() {
 	move_disabled m(std::string(100000u,'a'),1000UL);
 	std::vector<move_disabled> vm;
-	typedef std::chrono::high_resolution_clock Clock;
-    typedef std::chrono::milliseconds milliseconds;
+	using Clock=std::chrono::high_resolution_clock;
+    using std::chrono::milliseconds;
     Clock::time_point t0 = Clock::now();
 	for (int i=0; i < 10000; ++ i){
 		move_disabled m(std::string(100000u,'a'),1000UL);

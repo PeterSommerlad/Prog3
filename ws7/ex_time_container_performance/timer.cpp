@@ -5,5 +5,6 @@ std::chrono::microseconds time_func(void  (f)()){
 	auto start=clock.now();
 		f();
 	auto end = clock.now();
-	return end - start;
+	using std::chrono::microseconds;
+	return std::chrono::duration_cast<microseconds>(end - start);
 }

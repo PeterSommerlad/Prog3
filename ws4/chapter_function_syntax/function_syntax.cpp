@@ -4,6 +4,7 @@
 #include <iterator>
 #include <algorithm>
 #include <cmath>
+#include <vector>
 	void showScopingRules(int,double);
 	void localReferencesExample();
 	std::string serialize(std::vector<int> const &v);

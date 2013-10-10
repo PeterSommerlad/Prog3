@@ -35,7 +35,7 @@ private:
 	int year{9999};
 	int month{12};
 	int day{31};
-public: bool operator!=(Date const&)const;
+//public: bool operator!=(Date const&)const;
 
 
 //...

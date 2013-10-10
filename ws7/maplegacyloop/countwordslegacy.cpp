@@ -5,7 +5,7 @@
 #include <boost/iterator/transform_iterator.hpp>
 #include <boost/bind.hpp>
 template <typename K, typename V>
-struct key:std::unary_function<std::pair<K,V>const &,K>{
+struct key :std::unary_function<std::pair<K,V>const &,K>{
 	K const &operator()(std::pair<K,V>const &p)const{
 		return p.first;
 	}
@@ -32,7 +32,7 @@ for(iter it=words.begin(); it!=words.end(); ++it)
   std::cout << it->first << " = "<< it->second << '\n';
 
 
-key<wordmap::key_type,int> const selKey;
+key<wordmap::key_type,int> const selKey{};
 std::ostream_iterator<std::string> outstr(std::cout,", ");
 transform(words.begin(),words.end(),outstr,selKey);
 std::cout << "\n";
@@ -44,7 +44,7 @@ transform(words.begin(),words.end(),outstr,
 		 boost::bind(&wordmap::value_type::first,_1));
 std::cout << "\n";
 
-value<wordmap::key_type,int> const selectVal;
+value<wordmap::key_type,int> const selectVal{};
 copy(boost::make_transform_iterator(words.begin(),selectVal),
 	 boost::make_transform_iterator(words.end(),selectVal),
 	 std::ostream_iterator<int>(std::cout,", "));
