@@ -1,7 +1,8 @@
+#include "Ring5.h"
 #include "cute.h"
 #include "ide_listener.h"
+#include "xml_listener.h"
 #include "cute_runner.h"
-#include "Ring5.h"
 void testDefaultCtor() {
     Ring5 v{};
     ASSERT_EQUAL(0,v.value());
@@ -102,9 +103,11 @@ static_assert(Ring5{2}==7_R5,"UDL operator");
 
 static_assert(2==2_R5,"explicit UDL operator worked");
 
-void runSuite(){
-    cute::suite s;
-    //TODO add your test here
+
+
+void runAllTests(int argc, char const *argv[]){
+	cute::suite s;
+	//TODO add your test here
     s.push_back(CUTE(testDefaultCtor));
     s.push_back(CUTE(testValueCtor));
     s.push_back(CUTE(testValueCtorWithLargeInput));
@@ -116,12 +119,13 @@ void runSuite(){
     s.push_back(CUTE(testAssignmentBackToInt));
     s.push_back(CUTE(testAdditionWithIntExplicitCtor));
     s.push_back(CUTE(testAssignmentBackToIntExplicitCtor));
-    cute::ide_listener lis;
-    cute::makeRunner(lis)(s, "RingModulo5ConstExpr");
+	cute::xml_file_opener xmlfile(argc,argv);
+	cute::xml_listener<cute::ide_listener<> >  lis(xmlfile.out);
+	cute::makeRunner(lis,argc,argv)(s, "AllTests");
 }
 
-int main(){
-    runSuite();
+int main(int argc, char const *argv[]){
+    runAllTests(argc,argv);
     return 0;
 }
 

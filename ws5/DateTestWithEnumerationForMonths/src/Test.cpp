@@ -1,8 +1,9 @@
+#include "Date.h"
 #include "cute.h"
 #include "ide_listener.h"
+#include "xml_listener.h"
 #include "cute_runner.h"
 #include <sstream>
-#include "Date.h"
 #include <stdexcept>
 using namespace date;
 
@@ -333,7 +334,9 @@ void testInputOperatorDateButLessThan(){
 void testDefaultDate(){
 	ASSERT_EQUAL((Date{9999,12,31}),Date{});
 }
-void runSuite(){
+
+
+void runAllTests(int argc, char const *argv[]){
 	cute::suite s;
 	//TODO add your test here
 	s.push_back(CUTE(testPrintADate));
@@ -369,12 +372,13 @@ void runSuite(){
 	s.push_back(CUTE(testMakeDateYYYYMMDD));
 	s.push_back(CUTE(testDefaultDate));
 	s.push_back(CUTE(testDefinitionsOnly));
-	cute::ide_listener lis;
-	cute::makeRunner(lis)(s, "Date with boost operators");
+	cute::xml_file_opener xmlfile(argc,argv);
+	cute::xml_listener<cute::ide_listener<> >  lis(xmlfile.out);
+	cute::makeRunner(lis,argc,argv)(s, "AllTests");
 }
 
-int main(){
-    runSuite();
+int main(int argc, char const *argv[]){
+    runAllTests(argc,argv);
     return 0;
 }
 

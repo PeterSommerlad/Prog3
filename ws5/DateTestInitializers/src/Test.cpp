@@ -160,6 +160,7 @@ void testDateLessThanAdjacentDates(){
 void testDateLessThanYearOff(){
 	Date aday{2011,8,13};
 	Date yearlater{2012,8,13};
+	ASSERT(aday.operator<(yearlater));
 	ASSERT(aday < yearlater);
 	ASSERT(!(yearlater < aday));
 }

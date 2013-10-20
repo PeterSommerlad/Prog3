@@ -2,7 +2,7 @@
 #include <iostream>
 #include <iterator>
 int main(){
-	std::map<std::string,int> words;
+	std::map<std::string,size_t> words;
 	std::string s;
 	while (std::cin >> s)
 			++words[s];

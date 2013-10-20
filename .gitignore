@@ -26,5 +26,8 @@ ws4/chapter_function_syntax_test/chapter_function_syntax_test.xml
 ws4/chapter_function_syntax_test/cute/
 ws4/chapter_function_syntax/.settings/language.settings.xml
 ws7/maplegacyloop/.settings/language.settings.xml
+ws?/*Test/*Test.xml
+ws?/*/.settings/language.settings.xml
+
 
 *.prefs

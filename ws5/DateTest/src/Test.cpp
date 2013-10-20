@@ -1,8 +1,9 @@
+#include "Date.h"
 #include "cute.h"
 #include "ide_listener.h"
+#include "xml_listener.h"
 #include "cute_runner.h"
 #include <sstream>
-#include "Date.h"
 #include <stdexcept>
 
 
@@ -231,11 +232,11 @@ void testInputShortLimit(){
 	std::istringstream is("70000");
 	unsigned short x{};
 	is >> x;
-	ASSERT_EQUAL(0xfffe, x);
+	ASSERT_EQUAL(0xffffUL, x);
 }
-void runSuite(){
+
+void runAllTests(int argc, char const *argv[]){
 	cute::suite s;
-	//TODO add your test here
 	s.push_back(CUTE(testPrintADate));
 	s.push_back(CUTE(testPrintADateDoesntChangeFillChar));
 	s.push_back(CUTE(testIsValidYearLowerBoundary));
@@ -262,14 +263,14 @@ void runSuite(){
 	s.push_back(CUTE(testDateEqual));
 	s.push_back(CUTE(testDateInEqual));
 	s.push_back(CUTE(testInputShortLimit));
-	cute::ide_listener lis;
-	cute::makeRunner(lis)(s, "The Suite");
+	cute::xml_file_opener xmlfile(argc,argv);
+	cute::xml_listener<cute::ide_listener<> >  lis(xmlfile.out);
+	cute::makeRunner(lis,argc,argv)(s, "AllTests");
 }
 
-int main(){
-    runSuite();
+int main(int argc, char const *argv[]){
+    runAllTests(argc,argv);
     return 0;
 }
-
 
 

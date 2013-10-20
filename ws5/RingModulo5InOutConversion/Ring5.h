@@ -15,7 +15,7 @@ struct Ring5
 
 {
 //...
-    explicit
+//    explicit
 //
     Ring5(unsigned x=0u) : val{ x % 5 } {}
     unsigned value() const { return val; }
@@ -33,7 +33,7 @@ struct Ring5
     }
 
 
-    //explicit
+    explicit
     operator unsigned() const { return val; }
 
 

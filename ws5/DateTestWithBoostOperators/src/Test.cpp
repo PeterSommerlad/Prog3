@@ -1,8 +1,9 @@
+#include "Date.h"
 #include "cute.h"
 #include "ide_listener.h"
+#include "xml_listener.h"
 #include "cute_runner.h"
 #include <sstream>
-#include "Date.h"
 #include <stdexcept>
 using namespace date;
 
@@ -314,9 +315,8 @@ void testInputOperatorDateButLessThan(){
 
 }
 
-void runSuite(){
+void runAllTests(int argc, char const *argv[]){
 	cute::suite s;
-	//TODO add your test here
 	s.push_back(CUTE(testPrintADate));
 	s.push_back(CUTE(testPrintADateDoesntChangeFillChar));
 	s.push_back(CUTE(testIsValidYearLowerBoundary));
@@ -348,15 +348,14 @@ void runSuite(){
 	s.push_back(CUTE(testDateReadYYYYMMDD));
 	s.push_back(CUTE(testDateReadInValidDates));
 	s.push_back(CUTE(testMakeDateYYYYMMDD));
-	cute::ide_listener lis;
-	cute::makeRunner(lis)(s, "Date with boost operators");
+	cute::xml_file_opener xmlfile(argc,argv);
+	cute::xml_listener<cute::ide_listener<> >  lis(xmlfile.out);
+	cute::makeRunner(lis,argc,argv)(s, "AllTests");
 }
 
-int main(){
-    runSuite();
-    std::cout << Date{1964,12,24};
+int main(int argc, char const *argv[]){
+    runAllTests(argc,argv);
     return 0;
 }
-
 
 

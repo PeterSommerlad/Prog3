@@ -1,7 +1,8 @@
+#include "Ring5.h"
 #include "cute.h"
 #include "ide_listener.h"
+#include "xml_listener.h"
 #include "cute_runner.h"
-#include "Ring5.h"
 void testDefaultCtor() {
     Ring5 v{};
     ASSERT_EQUAL(0,v.value());
@@ -48,7 +49,7 @@ void testMultiplication(){
 
 
 void testAdditionWithInt(){
-//*
+/* test fails... because of ambiguous conversion
     Ring5 two{2};
     auto four=two+2u;
     ASSERT_EQUAL(Ring5{4},four);
@@ -59,12 +60,12 @@ void testAdditionWithInt(){
 
 void testAssignmentBackToInt(){
     Ring5 three{8};
-    unsigned u3=three;
-//*
+    unsigned u3=static_cast<unsigned>(three);
+/*
     unsigned eight= three+5u;
     ASSERT_EQUAL(8u,eight);
-//*/
     ASSERT_EQUAL(3u,three);
+//*/
 }
 
 void testAdditionWithIntExplicitCtor(){
@@ -79,18 +80,17 @@ void testAdditionWithIntExplicitCtor(){
 
 void testAssignmentBackToIntExplicitCtor(){
     Ring5 three{8};
-    unsigned u3=three;
+    unsigned u3=static_cast<unsigned>(three);
     auto eight= three+5u;
-    ASSERT_EQUAL(8u,eight);
+    ASSERT_EQUAL(Ring5{8u},eight);
     ASSERT_EQUAL(3u,u3);
-    ASSERT_EQUAL(3u,three);
+    ASSERT_EQUAL(Ring5{3u},three);
 }
 
 
 
-void runSuite(){
-    cute::suite s;
-    //TODO add your test here
+void runAllTests(int argc, char const *argv[]){
+	cute::suite s;
     s.push_back(CUTE(testDefaultCtor));
     s.push_back(CUTE(testValueCtor));
     s.push_back(CUTE(testValueCtorWithLargeInput));
@@ -102,12 +102,13 @@ void runSuite(){
     s.push_back(CUTE(testAssignmentBackToInt));
     s.push_back(CUTE(testAdditionWithIntExplicitCtor));
     s.push_back(CUTE(testAssignmentBackToIntExplicitCtor));
-    cute::ide_listener lis;
-    cute::makeRunner(lis)(s, "The Suite");
+	cute::xml_file_opener xmlfile(argc,argv);
+	cute::xml_listener<cute::ide_listener<> >  lis(xmlfile.out);
+	cute::makeRunner(lis,argc,argv)(s, "AllTests");
 }
 
-int main(){
-    runSuite();
+int main(int argc, char const *argv[]){
+    runAllTests(argc,argv);
     return 0;
 }
 

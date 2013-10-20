@@ -9,7 +9,7 @@
 
 void testEmptyVectorAtThrows() {
 	std::vector<int> empty_vector{};
-	ASSERT_THROWS(empty_vector.at(0),std::out_of_range);
+	ASSERT_THROWS(empty_vector.at(0),int);//out_of_range);
 }
 
 
