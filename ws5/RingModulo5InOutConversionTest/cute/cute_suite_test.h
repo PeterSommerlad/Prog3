@@ -31,9 +31,6 @@ namespace cute{
 		suite theSuite;
 		suite_test(suite const &s):theSuite(s){}
 		void operator()(){
-#if defined(USE_STD0X) || defined(USE_TR1)
-			using namespace boost_or_tr1::placeholders;
-#endif
 			std::for_each(theSuite.begin(),theSuite.end(),boost_or_tr1::bind(&test::operator(),_1));
 		}
 	};

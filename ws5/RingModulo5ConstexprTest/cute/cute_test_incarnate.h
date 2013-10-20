@@ -33,6 +33,7 @@ namespace cute {
 	struct test_incarnate_with_context {
 		test_incarnate_with_context(ContextObject context):theContext(context)
 		{}
+		test_incarnate_with_context(test_incarnate_with_context const &other):theContext(other.theContext){} // provide copy-ctor in case compiler will define it deleted
 		void operator()(){
 			TestFunctor t(theContext);// wouldn't create temporary to call with ()()
 			t();
