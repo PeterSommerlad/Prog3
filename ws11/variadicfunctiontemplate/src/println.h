@@ -11,8 +11,9 @@ void println(std::ostream &out, Head const& head, Tail const& ...tail) {
 	out << head;
 	if (sizeof...(tail)) {
 		out << ", ";
-	}
-	println(out,tail...); //recurse on tail
+		println(out,tail...); //recurse on tail
+	} else
+		out << '\n';
 }
 
 #endif /* PRINTLN_H_ */

@@ -13,7 +13,7 @@ int main(){
 	std::string s1 = "Hallo";
 	std::string s2 = "Hallihallo";
 	cout << "min(Hallo,Hallihallo) = " << min(s1,s2)<<'\n';
-	//min(2,pi); // compile error
+	min(2,pi); // compile error
 	min(static_cast<double>(2),pi);
 	cout << "min(Tobi,Peter) = " << min("Tobi","Peter") << '\n';
 }

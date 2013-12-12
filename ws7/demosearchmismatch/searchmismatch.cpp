@@ -17,7 +17,13 @@ int main(){
   auto
     start=search(v.begin(),v.end(),s.begin(),s.end()-1);
   show(v.begin(),start,cout);
-  auto p=mismatch(start,v.end(),s.begin());
-  show(p.first,v.end(),cout);
-  show(p.second,s.end(),cout);
+  if (distance(start,v.end())>= distance(s.begin(),s.end())){
+	  auto p=mismatch(start,v.end(),s.begin());
+  	  show(p.first,v.end(),cout);
+  	  show(p.second,s.end(),cout);
+  } else {
+	  auto p=mismatch(s.begin(),s.end(),start);
+  	  show(p.first,s.end(),cout);
+  	  show(p.second,v.end(),cout);
+  }
 }

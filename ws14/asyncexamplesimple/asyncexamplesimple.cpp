@@ -7,7 +7,7 @@ double do_some_expensive_calculation(double input){
 }
 
 int main(){
-	auto result=std::async(std::launch::deferred,
+	auto result=std::async(/*std::launch::deferred,*/
                          do_some_expensive_calculation,81.0);
 	std::cout << "do some other useful things\n" ;
 	std::cout << "waiting for he result...\n";

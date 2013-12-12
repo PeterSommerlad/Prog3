@@ -4,11 +4,11 @@
 
 template <typename T> class Sack; // forward declaration
 
-template <typename T>
-struct Sack<T*>
-{
-	~Sack()=delete;
-};
+//template <typename T>
+//struct Sack<T*>
+//{
+//	~Sack()=delete;
+//};
 //-----
 #include <vector>
 #include <string>

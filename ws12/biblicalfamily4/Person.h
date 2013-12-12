@@ -4,9 +4,11 @@
 #include <string>
 #include <vector>
 #include <iosfwd>
-using PersonPtr=std::shared_ptr<class Person>;
-using WeakPersonPtr=std::weak_ptr<class Person>;
-class Person : public std::enable_shared_from_this<Person> {
+//class Person; // forward declaration
+struct Person : public std::enable_shared_from_this<Person> {
+using PersonPtr=std::shared_ptr< Person>;
+using WeakPersonPtr=std::weak_ptr< Person>;
+private:
 	std::string name;
 	WeakPersonPtr father; // don't lock parent objects
 	WeakPersonPtr mother;
@@ -36,5 +38,7 @@ static PersonPtr makePerson(std::string name,
 	return res;
 }
 };
+using PersonPtr=Person::PersonPtr;
+
 
 #endif /* PERSON_H_ */

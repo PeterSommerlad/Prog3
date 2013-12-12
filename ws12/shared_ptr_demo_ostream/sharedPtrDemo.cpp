@@ -5,11 +5,11 @@
 
 
 
-std::shared_ptr<std::ostream> os_factory(bool str){
-    if (str)
-        return std::make_shared<std::ostringstream>();
-    else
+std::shared_ptr<std::ostream> os_factory(bool file){
+    if (file)
         return std::make_shared<std::ofstream>("hello.txt");
+    else
+        return std::make_shared<std::ostringstream>();
 }
 
 

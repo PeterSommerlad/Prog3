@@ -22,6 +22,7 @@ void printtopten2(wlist const &wm){
 			out{std::cout,"\n"},bind(&Pair::first,_1));
 }
 #if 0
+
 void printtopten(wlist const &wm){
 	using namespace std::placeholders;
 	std::vector<Pair> topten(10);

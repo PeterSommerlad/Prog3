@@ -22,7 +22,7 @@ void testSackWithPointersShouldntCompile(){
 
 
 void testmakeSackInt(){
-	auto sack=makeSack({1,2,3,4,5,6});
+	auto sack=makeSack<double>({1.0,2,3,4,5,6});
 	ASSERT_EQUAL(6,sack.size());
 }
 void testmakeSackCharPtr(){

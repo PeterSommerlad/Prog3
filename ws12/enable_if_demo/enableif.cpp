@@ -3,8 +3,8 @@
 
 
 template <typename U>
-bool is_prime(U u,
-		typename std::enable_if<std::is_unsigned<U>::value>::type* dummy ={}){
+typename std::enable_if<std::is_unsigned<U>::value,bool>::type
+is_prime(U u){
 	return true; // logic omitted
 }
 

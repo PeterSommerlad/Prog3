@@ -31,7 +31,7 @@ public:
 
 Wizard::Wizard(std::string name):pImpl{new WizardImpl{name}} {
 }
-Wizard::~Wizard() {} // must define it after WizardImpl is known for unique_ptr PIMPL
+Wizard::~Wizard() = default; //{} // must define it after WizardImpl is known for unique_ptr PIMPL
 
 std::string Wizard::doMagic(std::string wish) {
 	return pImpl->doMagic(wish);
