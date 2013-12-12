@@ -38,9 +38,9 @@ int main(){
 	auto x1=make<std::string>(std::move(x)); // forward as std::string&&
 	std::cout << "x = "<< x << ".\n";
 	std::cout << "x1 = "<< x1 << ".\n";
-//	auto y=make<std::vector<int>>(5,6);
+	auto y=make<std::vector<int>>(5,6);
 //	auto y=make<std::vector<int>>(std::initializer_list<int>{5,6});
-	auto y=make<std::vector<int>>({5,6});
+//	auto y=make<std::vector<int>>({5,6});// doesn't compile
 	std::cout << "y.size():"<<y.size()<<'\n';
 }
 
