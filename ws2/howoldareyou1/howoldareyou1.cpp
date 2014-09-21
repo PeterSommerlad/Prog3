@@ -4,6 +4,6 @@ int main() {
 	int age{-1};
 	std::cin >> age;
 	std::cout << "\nYou are " << age
-			  << " years old" << std::endl;
+			  << " years old\n";
 }
 

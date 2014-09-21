@@ -4,7 +4,7 @@
 #include <sstream>
 #include "sayhello2.h"
 void testSayHelloSaysHelloWorld() {
-	std::ostringstream out;
+	std::ostringstream out { };
 	sayHello(out);
 	ASSERT_EQUAL("Hello, world!\n",out.str());
 }
